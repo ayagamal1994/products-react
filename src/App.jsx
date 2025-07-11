@@ -13,7 +13,7 @@ function App() {
 
   return (
     <ProductProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/products-react">
         <Routes>
           <Route path="/" element={<ProductList />}></Route>
           <Route path="/product/:id" element={<Product />}></Route>
