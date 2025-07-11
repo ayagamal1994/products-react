@@ -1,0 +1,33 @@
+.nav {
+    background-color: #6857a0;
+    color: #fff;
+    padding: 30px 0 20px 0;
+    text-align: center;
+}
+.nav .logo a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.nav .shopping-cart {
+    position: relative;
+}
+.nav .shopping-cart p {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    top: -17px;
+    right: -15px;
+    background-color: #fff;
+    color: #6857a0
+}
+.nav .shopping-cart svg {
+    font-size: 25px
+}
+.nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+}

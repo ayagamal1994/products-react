@@ -1,0 +1,29 @@
+.login {
+    height: calc(100vh - 120px);
+
+}
+.login form {
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 50px;
+}
+.login form input {
+    width: 100%;
+    border: 1px solid #6857a0
+}
+.login form button {
+    background-color: #6857a0;
+    padding: 5px 20px;
+    border: 1px solid #6857a0;
+    text-transform: capitalize;
+}
+.login form button:hover {
+    background-color: #fff;
+    color: #6857a0
+}
+.login .error {
+    color: #d86a6a;
+    font-size: 12px;
+    text-transform: capitalize;
+    height: 30px;
+}

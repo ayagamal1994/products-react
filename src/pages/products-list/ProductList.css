@@ -1,0 +1,14 @@
+.products {
+    margin: 30px 0;
+}
+.products .products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+}
+.products .products-search .form-control {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #6857a0
+}
