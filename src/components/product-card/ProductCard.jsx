@@ -4,7 +4,7 @@ import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useProductContext } from '../../context/ProductContext'; 
 
-const ProductCard = ({product, shortList}) => {
+const ProductCard = ({product}) => {
   const { getCount, increase, decrease } = useProductContext();
   const count = getCount(product.id);
 
@@ -46,7 +46,7 @@ const ProductCard = ({product, shortList}) => {
               <button onClick={(e)=>{increase(e, product)}} className="increase">+</button>
             </div>
 
-            <button className="short-list" onClick={()=>{shortList(product.title)}}>add short list</button>
+            {/* <button className="short-list" onClick={()=>{shortList(product.title)}}>add short list</button> */}
         </div>
     </>
   )
