@@ -6,13 +6,11 @@ import Cart from "./pages/Cart/Cart";
 import Product from "./pages/Product/Product";
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ProductProvider } from "./context/ProductContext";
 import ProtectedRoute from "./ProtectedRoute";
 function App() {
   
 
   return (
-    <ProductProvider>
       <BrowserRouter basename="/products-react">
         <Routes>
           <Route path="/" element={<ProductList />}></Route>
@@ -30,7 +28,6 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-    </ProductProvider>
   )
 }
 

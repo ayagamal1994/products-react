@@ -2,11 +2,18 @@ import "./ProductCard.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { useProductContext } from '../../context/ProductContext'; 
-
+//import { useProductContext } from '../../context/ProductContext'; 
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import {  decrease, increase } from "../../store/ProductCountStore";
+import { getCount } from "../../store/ProductCountStore";
 const ProductCard = ({product}) => {
-  const { getCount, increase, decrease } = useProductContext();
-  const count = getCount(product.id);
+  //const { getCount, increase, decrease } = useProductContext();
+  const count = useSelector((state )=>getCount(state, product.id));
+
+  //Dispatch
+  const dispatch = useDispatch();
+  //const {count} = useSelector((state)=>state.productCount)
 
   const navigate = useNavigate();
 
@@ -37,13 +44,13 @@ const ProductCard = ({product}) => {
               
             </div>
             <div className="increase-decrease d-flex align-items-center">
-              <button onClick={(e)=>{decrease(e, product)}} className="decrease">-</button>
+              <button onClick={(e)=>{e.stopPropagation(); dispatch(decrease(product))}} className="decrease">-</button>
               {/* {
                 count>0? <p className="count">{count}</p>: null
               } */}
 
               <p className="count">{count}</p>
-              <button onClick={(e)=>{increase(e, product)}} className="increase">+</button>
+              <button onClick={(e)=>{e.stopPropagation(); dispatch(increase(product))}} className="increase">+</button>
             </div>
 
             {/* <button className="short-list" onClick={()=>{shortList(product.title)}}>add short list</button> */}
@@ -53,3 +60,4 @@ const ProductCard = ({product}) => {
 }
 
 export default ProductCard
+

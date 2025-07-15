@@ -2,10 +2,12 @@ import "./Nav.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
-import { useProductContext } from '../../context/ProductContext';
-
+import { useSelector } from "react-redux";
+//import { useProductContext } from '../../context/ProductContext';
+import { totalCount } from "../../store/ProductCountStore";
 const Nav = () => {
-  const {totalCount} = useProductContext()
+  //const {totalCount} = useProductContext()
+  const tCount = useSelector(totalCount)
   return (
     <div className="nav">
       <div className="container">
@@ -18,7 +20,7 @@ const Nav = () => {
             <NavLink to="/register">register</NavLink>
             <div className="shopping-cart">
               <NavLink to="/cart">
-                <p className="d-flex justify-content-center align-items-center">{totalCount}</p>
+                <p className="d-flex justify-content-center align-items-center">{tCount}</p>
                 <FontAwesomeIcon icon={faShoppingCart}/>
               </NavLink>
             </div>
